@@ -3,18 +3,44 @@ import React, { FC, useContext, useEffect, useState } from "react";
 import { ReactComponent as BGTriangle } from "../../assets/bg-triangle.svg";
 import ScoreContext from "../../lib/ScoreContext";
 import PickButton from "../PickButton/PickButton";
+import Result from "../Result/Result";
 import "./Arena.scss";
 
 type PickValues = "rock" | "paper" | "scissors";
-type WinnerTypes = "player" | "house";
+type ResultType = "player" | "house" | "tie";
 
 const Arena: FC = () => {
-  const {score, updateScore} = useContext(ScoreContext)
+  const { score, updateScore } = useContext(ScoreContext);
   const [pickedValue, setPickedValue] = useState<PickValues>();
   const [houseValue, setHouseValue] = useState<PickValues>("rock");
   const [showPicks, setShowPicks] = useState(false);
-  const [winner, setWinner] = useState<WinnerTypes>();
+  const [result, setResult] = useState<ResultType>();
   const houseOptions: PickValues[] = ["rock", "paper", "scissors"];
+
+  const winningConditions: Record<string, PickValues[]> = {
+    paper: ["paper", "rock"],
+    rock: ["rock", "scissors"],
+    scissors: ["scissors", "paper"],
+  };
+
+  const chooseWinner = (houseVal: PickValues) => {
+    if (!pickedValue || !houseVal) return;
+    if (pickedValue === houseVal) return setResult("tie");
+
+    const result = Object.keys(winningConditions).find((key) =>
+      winningConditions[key].every(
+        (value) => value === pickedValue || value === houseVal
+      )
+    );
+
+    if (houseValue === result) {
+      setResult("house");
+      updateScore(score - 1)
+    } else {
+      setResult("player");
+      updateScore(score + 1)
+    }
+  };
 
   useEffect(() => {
     if (!pickedValue) return;
@@ -24,10 +50,17 @@ const Arena: FC = () => {
 
     setTimeout(() => {
       setShowPicks(true);
+      chooseWinner(houseOptions[randomIdx]);
     }, 2000);
 
     console.log(houseOptions[randomIdx]);
   }, [pickedValue]);
+
+  const playAgain = () => {
+    setShowPicks(false);
+    setPickedValue(undefined);
+    setResult(undefined);
+  }
 
   const arenaPickerRockClasses = classnames({
     arena__picker: true,
@@ -83,6 +116,7 @@ const Arena: FC = () => {
         pick={houseValue}
         disabled
       />
+      <Result result={result} onClick={playAgain} />
       <BGTriangle className={arenaTriangleClasses} />
     </div>
   );
