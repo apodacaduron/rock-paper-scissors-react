@@ -1,0 +1,37 @@
+.scoreboard {
+  background: #fff;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  min-width: 116px;
+
+  &__title {
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    line-height: 1.2rem;
+  }
+
+  &__points {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .scoreboard {
+    min-width: 64px;
+
+    &__title {
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+    }
+
+    &__points {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+  }
+}

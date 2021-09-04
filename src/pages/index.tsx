@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
-import Rules from "../components/Rules/Rules";
+import Header from "../components/Header";
+import Rules from "../components/Rules";
 
 const Home: FC = () => {
   const [rulesVisible, setRulesVisible] = useState(true);
@@ -11,6 +12,7 @@ const Home: FC = () => {
   return (
     <div>
       {rulesVisible && <Rules onHide={onHideRules} />}
+      <Header />
     </div>
   );
 };
