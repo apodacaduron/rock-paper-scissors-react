@@ -6,25 +6,32 @@ $distance: 156px;
   align-items: center;
   justify-content: center;
 
-
   &__picker {
-      z-index: 1;
-      position: absolute;
-      transition: 0.5s all ease-in-out;
+    z-index: 1;
+    position: absolute;
+    transition: 0.5s all ease-in-out;
 
-      &--choose-rock {
-        transform: translate3d(0, $distance, 0);
-      }
-      &--choose-paper {
-        transform: translate3d(-$distance, -$distance, 0);
-      }
-      &--choose-scissors {
-        transform: translate3d($distance, -$distance, 0);
-      }
+    &--choose-rock {
+      transform: translate3d(0, $distance, 0);
+    }
+    &--choose-paper {
+      transform: translate3d(-$distance, -$distance, 0);
+    }
+    &--choose-scissors {
+      transform: translate3d($distance, -$distance, 0);
+    }
 
-      &--hide {
-          opacity: 0;
-      }
+    &--hide {
+      opacity: 0;
+    }
+
+    &--player-choice {
+      transform: translate3d(-200px, 0, 0) scale(1.4);
+    }
+
+    &--house-choice {
+      transform: translate3d(200px, 0, 0) scale(1.4);
+    }
   }
 
   &__triangle {
@@ -32,13 +39,23 @@ $distance: 156px;
     transition: 0.5s all ease-in-out;
 
     &--hide {
-        opacity: 0;
+      opacity: 0;
     }
   }
 }
 
 @media (max-width: 768px) {
-    .arena {
-        transform: scale(0.6);
+  .arena {
+    transform: scale(0.6);
+
+    &__picker {
+      &--player-choice {
+        transform: translate3d(-156px, 0, 0) scale(1.2);
+      }
+
+      &--house-choice {
+        transform: translate3d(156px, 0, 0) scale(1.2);
+      }
     }
+  }
 }

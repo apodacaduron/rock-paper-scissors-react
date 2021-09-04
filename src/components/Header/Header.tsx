@@ -5,12 +5,12 @@ import Scoreboard from '../Scoreboard/Scoreboard'
 import './Header.scss'
 
 const Header: FC = () => {
-    const scoreContext = useContext(ScoreContext)
+    const {score} = useContext(ScoreContext)
 
     return (
         <div className="header">
             <Logo />
-            <Scoreboard points={scoreContext} />
+            <Scoreboard points={score} />
         </div>
     )
 }
