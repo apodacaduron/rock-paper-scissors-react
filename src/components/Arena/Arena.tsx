@@ -98,23 +98,27 @@ const Arena: FC = () => {
         pick="rock"
         disabled={Boolean(pickedValue)}
         onClick={() => setPickedValue("rock")}
+        highlight={showPicks && result === 'player'}
       />
       <PickButton
         className={arenaPickerPaperClasses}
         pick="paper"
         disabled={Boolean(pickedValue)}
         onClick={() => setPickedValue("paper")}
+        highlight={showPicks && result === 'player'}
       />
       <PickButton
         className={arenaPickerScissorsClasses}
         pick="scissors"
         disabled={Boolean(pickedValue)}
         onClick={() => setPickedValue("scissors")}
+        highlight={showPicks && result === 'player'}
       />
       <PickButton
         className={arenaPickerHouseClasses}
         pick={houseValue}
         disabled
+        highlight={showPicks && result === 'house'}
       />
       <Result result={result} onClick={playAgain} />
       <BGTriangle className={arenaTriangleClasses} />

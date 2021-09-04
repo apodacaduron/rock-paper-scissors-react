@@ -8,9 +8,10 @@ import './PickButton.scss'
 interface IPickButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   pick: "rock" | "paper" | "scissors";
   sm?: boolean;
+  highlight?: boolean;
 }
 
-const PickButton: FC<IPickButton> = ({ pick = 'rock', sm = false, ...props }) => {
+const PickButton: FC<IPickButton> = ({ pick = 'rock', sm = false, highlight = false, ...props }) => {
   const getIcon = () => {
     switch (pick) {
       case "rock":
@@ -27,7 +28,7 @@ const PickButton: FC<IPickButton> = ({ pick = 'rock', sm = false, ...props }) =>
   const pickButtonClasses = classnames({
       'pick-button': true,
       [`pick-button--${pick}`]: true,
-      'pick-button--sm': Boolean(sm)
+      'pick-button--sm': Boolean(sm),
   })
 
   return (
@@ -35,6 +36,9 @@ const PickButton: FC<IPickButton> = ({ pick = 'rock', sm = false, ...props }) =>
       <div className={pickButtonClasses}>
         <div className="pick-button__icon">{getIcon()}</div>
       </div>
+      <div className={`circle ${highlight ? 'expand-sm' : ''}`} />
+      <div className={`circle ${highlight ? 'expand-md' : ''}`} />
+      <div className={`circle ${highlight ? 'expand-lg' : ''}`} />
     </button>
   );
 };
