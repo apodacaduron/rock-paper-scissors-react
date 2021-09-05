@@ -5,10 +5,13 @@ import Header from "../components/Header";
 import Rules from "../components/Rules";
 
 const Home: FC = () => {
-  const [rulesVisible, setRulesVisible] = useState(true);
+  const [rulesVisible, setRulesVisible] = useState(
+    !Boolean(localStorage.getItem("rules"))
+  );
 
   const onHideRules = () => {
     setRulesVisible(false);
+    localStorage.setItem("rules", "false");
   };
 
   return (

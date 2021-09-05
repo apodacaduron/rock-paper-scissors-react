@@ -53,8 +53,7 @@ const Arena: FC = () => {
       chooseWinner(houseOptions[randomIdx]);
     }, 2000);
 
-    console.log(houseOptions[randomIdx]);
-  }, [pickedValue]);
+  }, [pickedValue, houseOptions]);
 
   const playAgain = () => {
     setShowPicks(false);
@@ -120,7 +119,7 @@ const Arena: FC = () => {
         disabled
         highlight={showPicks && result === 'house'}
       />
-      <div className="players-choice">
+      <div className={`players-choice ${!showPicks ? 'players-choice--hide' : ''}`}>
         <div className="player">YOU PICKED</div>
         <div className="house">THE HOUSE PICKED</div>
       </div>

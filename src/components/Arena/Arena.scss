@@ -48,9 +48,14 @@ $distance: 156px;
     transform: translate3d(0, -220px, 0);
     color: white;
     font-size: 1.75rem;
+    transition: 0.5s all ease-in-out;
 
     .house {
       transform: translate3d(50px, 0, 0);
+    }
+
+    &--hide {
+      opacity: 0;
     }
   }
 
