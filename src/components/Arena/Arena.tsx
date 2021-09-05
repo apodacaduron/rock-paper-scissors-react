@@ -120,6 +120,10 @@ const Arena: FC = () => {
         disabled
         highlight={showPicks && result === 'house'}
       />
+      <div className="players-choice">
+        <div className="player">YOU PICKED</div>
+        <div className="house">THE HOUSE PICKED</div>
+      </div>
       <Result result={result} onClick={playAgain} />
       <BGTriangle className={arenaTriangleClasses} />
     </div>

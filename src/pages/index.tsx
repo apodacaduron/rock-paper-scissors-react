@@ -12,12 +12,12 @@ const Home: FC = () => {
   };
 
   return (
-    <div>
+    <>
       {rulesVisible && <Rules onHide={onHideRules} />}
       <Header />
       <Arena />
       <Footer onClick={() => setRulesVisible(true)} />
-    </div>
+    </>
   );
 };
 
