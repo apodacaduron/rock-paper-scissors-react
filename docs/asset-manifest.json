@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/rock-paper-scissors-react/static/css/main.411f1a3b.chunk.css",
-    "main.js": "/rock-paper-scissors-react/static/js/main.196568d5.chunk.js",
-    "main.js.map": "/rock-paper-scissors-react/static/js/main.196568d5.chunk.js.map",
+    "main.js": "/rock-paper-scissors-react/static/js/main.8bd40130.chunk.js",
+    "main.js.map": "/rock-paper-scissors-react/static/js/main.8bd40130.chunk.js.map",
     "runtime-main.js": "/rock-paper-scissors-react/static/js/runtime-main.e3c3786b.js",
     "runtime-main.js.map": "/rock-paper-scissors-react/static/js/runtime-main.e3c3786b.js.map",
     "static/js/2.58c4a27b.chunk.js": "/rock-paper-scissors-react/static/js/2.58c4a27b.chunk.js",
@@ -24,6 +24,6 @@
     "static/js/runtime-main.e3c3786b.js",
     "static/js/2.58c4a27b.chunk.js",
     "static/css/main.411f1a3b.chunk.css",
-    "static/js/main.196568d5.chunk.js"
+    "static/js/main.8bd40130.chunk.js"
   ]
 }
