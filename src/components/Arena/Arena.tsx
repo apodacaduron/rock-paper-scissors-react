@@ -33,7 +33,7 @@ const Arena: FC = () => {
       )
     );
 
-    if (houseValue === result) {
+    if (houseVal === result) {
       setResult("house");
       updateScore(score - 1)
     } else {
