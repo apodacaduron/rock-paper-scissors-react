@@ -1,4 +1,6 @@
 button {
+  overflow: visible;
+  
   &:disabled {
     cursor: default;
   }
