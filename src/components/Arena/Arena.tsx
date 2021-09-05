@@ -53,7 +53,7 @@ const Arena: FC = () => {
       chooseWinner(houseOptions[randomIdx]);
     }, 2000);
 
-  }, [pickedValue, houseOptions]);
+  }, [pickedValue]);
 
   const playAgain = () => {
     setShowPicks(false);
