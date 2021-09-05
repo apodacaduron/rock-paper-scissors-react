@@ -20,9 +20,6 @@ button {
         hsl(349, 71%, 52%),
         hsl(349, 70%, 56%)
       );
-      box-shadow: 0px 8px 0px 0px hsl(349, 75%, 30%);
-      -webkit-box-shadow: 0px 8px 0px 0px hsl(349, 75%, 30%);
-      -moz-box-shadow: 0px 8px 0px 0px hsl(349, 75%, 30%);
     }
 
     &--paper {
@@ -31,16 +28,10 @@ button {
         hsl(230, 89%, 62%),
         hsl(230, 89%, 65%)
       );
-      box-shadow: 0px 8px 0px 0px hsl(230, 68%, 44%);
-      -webkit-box-shadow: 0px 8px 0px 0px hsl(230, 68%, 44%);
-      -moz-box-shadow: 0px 8px 0px 0px hsl(230, 68%, 44%);
     }
 
     &--scissors {
       background: linear-gradient(90deg, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-      box-shadow: 0px 8px 0px 0px hsl(39, 98%, 32%);
-      -webkit-box-shadow: 0px 8px 0px 0px hsl(39, 98%, 32%);
-      -moz-box-shadow: 0px 8px 0px 0px hsl(39, 98%, 32%);
     }
 
     &--sm {
